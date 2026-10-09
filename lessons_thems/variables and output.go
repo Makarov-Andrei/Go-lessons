@@ -1,0 +1,88 @@
+package main
+
+import "fmt"
+
+func main() {
+	// Первая программа, способы вывода
+	/*
+			fmt.Print("Фильм: ")
+			fmt.Println("Интерстеллар")
+			fmt.Println("Жанр: Фантастика\nГод:", 2014)
+			fmt.Printf("Рейтинг: %.1f, Длительность %d минут", 8.6, 169)
+
+
+		// Переменные
+		// через var объявляются вне функции, через := работает только внутри функций
+		var year int64 = 2014
+		var rating = 8.6
+		film := "Интерстеллар"
+		// Для изменения значения уже объявленной переменной достаточно просто =
+		// Нельзя переобъявлять переменные
+		rating = 8.5
+		// Для прибавления можно
+		rating += 0.3
+		// Объявление пустой переменной
+		var sum int64
+		// Даже пустую переменную нужно использовать иначе ошибка
+		fmt.Print(sum)
+		// Можно объявить несколько переменных в одну строку
+		film1, yearFilm1, ratingFilm1 := "Фильм1", 2000, 10.1
+		fmt.Print(film1, yearFilm1, ratingFilm1)
+		film2 := "Фильм2"
+		// Можно обмениваться значениями переменных
+		fmt.Print(film1, film2)
+		film1, film2 = film2, film1
+		fmt.Print(film1, film2)
+		// Константы
+		const maxRating = 10
+		// Можно объявить сразу несколько
+		const (
+			age  = 18
+			site = "www.google.com"
+		)
+
+		fmt.Printf("Фильм: %s\nЖанр: Фантастика\nГод:%d", film, year)
+		fmt.Printf("Рейтинг: %.1f, Длительность %d минут", rating, 169)
+	*/
+	//Типы данных и преобразования
+	//Нулевое значение целых чисел
+	var zeroInt int
+	views := 1_500_000
+	fmt.Println(zeroInt)
+	fmt.Println(views)
+	//Нулевое значение чисел с дробной частью
+	var zeroFloat float64
+	views2 := 8.85
+	fmt.Println(zeroFloat)
+	fmt.Println(views2)
+	//Нулевое значение строк
+	var zeroString string
+	title := "Title"
+	fmt.Println(zeroString)
+	fmt.Println(title)
+	//Многострочный текст
+	syn := `Первая строка
+вторая строка
+третья строка`
+	fmt.Println(syn)
+	//Тип данных rune
+	var leteerA rune = 'A'
+	fmt.Println(leteerA)
+	fmt.Println(string(leteerA))
+	fmt.Printf("%d\n", leteerA)
+	fmt.Printf("%c\n", leteerA)
+	//Нулевое значение булевого типа данных
+	var zeroBool bool
+	isPremium := true
+	hasSubtitle := false
+	fmt.Println(zeroBool, isPremium, hasSubtitle)
+	//Преобразование при математических вычислениях
+	episods := 8
+	eposodTime := 56.5
+
+	allSeasonTime := float64(episods) * eposodTime
+	fmt.Printf("Сезон длится %d минут", int(allSeasonTime))
+	//не пытайся переводить float64 в int будет ошибка из-за округления
+	//не переводи число в строку потому что у типа rune на числа забиты буквы
+
+}
