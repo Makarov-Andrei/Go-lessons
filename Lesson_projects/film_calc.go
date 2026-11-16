@@ -8,7 +8,9 @@ func main() {
 	fmt.Printf("Цена если днем в выходные:%d\n", ticetPrice(100, false, true))
 	fmt.Printf("Цена если днем в будни:%d\n", ticetPrice(100, false, false))
 	receipt, total := formatReceipt("IT", 10, 100) //Распаковка значений receipt, total
-	fmt.Printf("Ваш билет\n%sПолная стоимость: %d", receipt, total)
+	fmt.Printf("Ваш билет\n%sПолная стоимость: %v\n", receipt, total)
+
+	fmt.Println("Проверка на возраст показала что:", isAllowed(16, 18))
 }
 
 func ticetPrice(basePrice int, isEvening bool, isWeekend bool) int {
@@ -28,4 +30,12 @@ func formatReceipt(movieName string, count int, priceTicket int) (string, int) {
 	total := count * priceTicket
 	receipt := fmt.Sprintf("Фильм: %s\nВсего билетов: %d\nЦена за один билет: %d\n", movieName, count, priceTicket)
 	return receipt, total
+}
+
+func isAllowed(viewerAge int, movieRating int) string {
+	if viewerAge >= movieRating {
+		return "Вы проходите по возрасту"
+	}
+
+	return "Вы не проходите по возрасту"
 }
